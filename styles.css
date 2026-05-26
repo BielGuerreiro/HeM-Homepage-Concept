@@ -121,7 +121,8 @@ main {
 .container-banner-duplo {
   position: relative;
   width: 100%;
-  height: 168vh;
+  height: auto; /* Ajustado para auto para não quebrar no celular quando empilhar */
+  min-height: 168vh;
 }
 
 .titulo {
@@ -282,4 +283,67 @@ main {
 .link-produto:hover .img-hover {
   opacity: 1;
   transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .menu,
+  .menu-lateral input {
+    display: none;
+  }
+
+  .logo {
+    padding-left: 20px;
+  }
+
+  .menu-container {
+    left: 4%;
+  }
+
+  .banner video {
+    height: 60vh;
+  }
+
+  .banners {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .titulo h2 {
+    font-size: 24px;
+    padding-top: 30px;
+    margin-bottom: 25px;
+  }
+
+  .novidades-grid,
+  .parceiros-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .titulo2 h2 {
+    font-size: 22px;
+  }
+
+  .titulo2 .bx-chevron-right {
+    font-size: 24px;
+  }
+
+  .lojinha img {
+    width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .novidades-grid,
+  .parceiros-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo2 h2 {
+    font-size: 18px;
+  }
+
+  .lojinha img {
+    width: 75px;
+  }
 }
